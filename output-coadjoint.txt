@@ -1,0 +1,88 @@
+Verifying the claim for adjoint of type C3
+using the tangent bundle twisted by -1
+
+  weight of bundle       rank   H^i   weight of cohomology   dimension
+├──────────────────────┼──────┼─────┼──────────────────────┼───────────┤
+  w[1] - 2*w[2] + w[3]   4      1     0                      1
+  2*w[1] - w[2]          3
+
+Cohomology in degree 1 is
+- vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
+
+Verifying the claim for adjoint of type C4
+using the tangent bundle twisted by -1
+
+  weight of bundle       rank   H^i   weight of cohomology   dimension
+├──────────────────────┼──────┼─────┼──────────────────────┼───────────┤
+  w[1] - 2*w[2] + w[3]   8      1     0                      1
+  2*w[1] - w[2]          3
+
+Cohomology in degree 1 is
+- vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
+
+Verifying the claim for adjoint of type C5
+using the tangent bundle twisted by -1
+
+  weight of bundle       rank   H^i   weight of cohomology   dimension
+├──────────────────────┼──────┼─────┼──────────────────────┼───────────┤
+  w[1] - 2*w[2] + w[3]   12     1     0                      1
+  2*w[1] - w[2]          3
+
+Cohomology in degree 1 is
+- vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
+
+Verifying the claim for adjoint of type C6
+using the tangent bundle twisted by -1
+
+  weight of bundle       rank   H^i   weight of cohomology   dimension
+├──────────────────────┼──────┼─────┼──────────────────────┼───────────┤
+  w[1] - 2*w[2] + w[3]   16     1     0                      1
+  2*w[1] - w[2]          3
+
+Cohomology in degree 1 is
+- vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
+
+Verifying the claim for adjoint of type C7
+using the tangent bundle twisted by -1
+
+  weight of bundle       rank   H^i   weight of cohomology   dimension
+├──────────────────────┼──────┼─────┼──────────────────────┼───────────┤
+  w[1] - 2*w[2] + w[3]   20     1     0                      1
+  2*w[1] - w[2]          3
+
+Cohomology in degree 1 is
+- vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
+
+Verifying the claim for adjoint of type C8
+using the tangent bundle twisted by -1
+
+  weight of bundle       rank   H^i   weight of cohomology   dimension
+├──────────────────────┼──────┼─────┼──────────────────────┼───────────┤
+  w[1] - 2*w[2] + w[3]   24     1     0                      1
+  2*w[1] - w[2]          3
+
+Cohomology in degree 1 is
+- vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
+
+Verifying the claim for adjoint of type C9
+using the tangent bundle twisted by -1
+
+  weight of bundle       rank   H^i   weight of cohomology   dimension
+├──────────────────────┼──────┼─────┼──────────────────────┼───────────┤
+  w[1] - 2*w[2] + w[3]   28     1     0                      1
+  2*w[1] - w[2]          3
+
+Cohomology in degree 1 is
+- vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
+
+Verifying the claim for adjoint of type F4
+using the tangent bundle twisted by -1
+
+  weight of bundle   rank   H^i   weight of cohomology   dimension
+├──────────────────┼──────┼─────┼──────────────────────┼───────────┤
+  w[3] - 2*w[4]      8      1     0                      1
+  w[1] - w[4]        7
+
+Cohomology in degree 1 is
+- vector bundle of weight w[3] - 2*w[4] giving 0
+
