@@ -2,7 +2,8 @@
 
 This repository contains the code supporting the computations in the paper
 "Failure of Bott vanishing for (co)adjoint partial flag varieties",
-by Pieter Belmans.
+by Pieter Belmans,
+see [`arXiv:2506.09811`](https://arxiv.org/abs/2506.09811).
 
 It implements a computation of exterior powers of completely reducible homogeneous vector bundles
 and the Borel-Weil-Bott theorem, to compute the cohomology of twists of exterior powers of the tangent bundle
