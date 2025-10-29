@@ -46,6 +46,14 @@ The output can be found in [`output-adjoint.txt`](output-adjoint.txt).
 
 ## `coadjoint.sage`
 
+By running
+
+```bash
+sage coadjoint.sage
+```
+
+one computes the results reported in the paper.
+
 The code uses the semisimplification of the tangent bundle,
 twisted by `O(-1)`, and verifies that
 
