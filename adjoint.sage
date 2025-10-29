@@ -4,6 +4,8 @@ load("code.sage")
 def E(D):
     """
     Return the highest weight of the vector bundle `E` of an adjoint variety
+
+    - `D` is the Dynkin type
     """
     G = D[0]
     n = int(D[1:])
@@ -67,6 +69,7 @@ def verify(D, k, q):
     if D == "D4":
         weights = [H[1] for H in cohomologies if H[0] == 1]
         # too many components in degree 1 to be cancelled by degree 0
+        # this will not happen for our choice
         if len(weights) < len([H for H in cohomologies if H[0] == 0]):
             raise Exception
 
@@ -101,6 +104,7 @@ def verify(D, k, q):
     print(f"Cohomology in degree 1 is")
     print(f"- vector bundle of weight {weight[1]} giving {weight[0]}")
     print()
+    print()
 
     return True
 
@@ -117,29 +121,3 @@ verify("E7", 1, 7)
 verify("E8", 8, 11)
 verify("F4", 1, 4)
 verify("G2", 2, 2)
-
-
-def adjoint_F4():
-    GP = ("F4", 1)
-    q = 4
-
-    print(
-        [
-            twist_by_line_bundle(GP, summand, -1)
-            for summand in exterior_power(GP, E("F4"), 4)
-        ]
-    )
-    print([summand for summand in exterior_power(GP, E("F4"), 3)])
-
-
-def adjoint_G2():
-    GP = ("G2", 2)
-    q = 2
-
-    print(
-        [
-            twist_by_line_bundle(GP, summand, -1)
-            for summand in exterior_power(GP, E(GP[0]), q)
-        ]
-    )
-    print([summand for summand in exterior_power(GP, E(GP[0]), q - 1)])

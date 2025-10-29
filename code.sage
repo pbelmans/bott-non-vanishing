@@ -1,6 +1,9 @@
 def levi_type(G, k):
     r"""
-    Compute the Dynkin type of the Levi factor
+    Compute the Dynkin type of the Levi factor `L`
+
+    - `G` is the Dynkin type of the ambient simple algebraic group
+    - `k` is the index of the vertex defining the maximal parabolic subgroup
     """
     G = CartanType(G)
     n = G.rank()
@@ -64,6 +67,12 @@ def levi_type(G, k):
 
 
 def relabeling(G, k):
+    r"""
+    Compute how fundamental weights of `G` restrict to those of `L`
+
+    - `G` is the Dynkin type of the ambient simple algebraic group
+    - `k` is the index of the vertex defining the maximal parabolic subgroup
+    """
     G = CartanType(G)
     n = G.rank()
 
@@ -112,8 +121,13 @@ def relabeling(G, k):
 
 
 def restriction(GP):
-    LG = RootSystem(CartanType(GP[0])).weight_lattice()
-    k = GP[1]
+    r"""
+    Determine the restriction of fundamental weights
+
+    - `GP` is a pair `(D, k)` of a Dynkin type and an index `k` encoding `G/P`
+    """
+    (D, k) = GP
+    LG = RootSystem(CartanType(D)).weight_lattice()
 
     # constructing the restriction matrix: using simple roots
     M = matrix(
@@ -127,16 +141,24 @@ def restriction(GP):
 
 # combine every summand with the line bundle
 def combine(GP, summands, line_bundle):
-    LG = RootSystem(CartanType(GP[0])).weight_lattice()
+    r"""
+    Combine the computation in the center and derived subgroup
+
+    - `GP` is a pair `(D, k)` of a Dynkin type and an index `k` encoding `G/P`
+    - `summands` is a list of fundamental weights for the derived subgroup
+    - `line_bundle` is the twist defined by the center
+    """
+    (D, k) = GP
+    LG = RootSystem(CartanType(D)).weight_lattice()
 
     # the Levi type and its weight lattice
-    L = levi_type(GP[0], GP[1])
+    L = levi_type(D, k)
     LL = RootSystem(L).weight_lattice()
 
     result = []
 
     for summand in summands:
-        # replacing baromega with omega
+        # lifting to weight lattice of the Levi
         A = RootSystem(L).ambient_space()
         w = A(list(summand._monomial_coefficients.keys())[0])
 
@@ -148,7 +170,7 @@ def combine(GP, summands, line_bundle):
         )
         lift = sum(
             [
-                LG.fundamental_weight(relabeling(GP[0], GP[1])[i])
+                LG.fundamental_weight(relabeling(D, k)[i])
                 * summand.coefficient(i)
                 for i in L.index_set()
             ]
@@ -163,37 +185,48 @@ def combine(GP, summands, line_bundle):
         twist = int(twist)
 
         # end result
-        result.append(lift - twist * LG.fundamental_weight(GP[1]))
+        result.append(lift - twist * LG.fundamental_weight(k))
 
     return result
 
 
-def twist_by_line_bundle(GP, w, i):
+def twist_by_line_bundle(GP, weight, i):
     r"""
-    Twist the tensor product of the vector bundle described by the weight `w` by `O(i)`
+    Twist the tensor product of the vector bundle described by the weight `weight` by `O(i)`
+
+    - `GP` is a pair `(D, k)` of a Dynkin type and an index `k` encoding `G/P`
+    - `weight` is a fundamental `L`-dominant weight
+    - `i` the twist
     """
-    LG = RootSystem(CartanType(GP[0])).weight_lattice()
+    (D, k) = GP
+    LG = RootSystem(CartanType(D)).weight_lattice()
     LG.print_options(prefix="w")
 
-    return w + i * LG.fundamental_weights()[GP[1]]
+    return weight + i * LG.fundamental_weights()[k]
 
 
-def exterior_power(GP, w, p):
+def exterior_power(GP, weight, p):
     r"""
-    Compute the `p`th exterior power of vector bundle described by the weight `w`
+    Compute the `p`th exterior power of vector bundle described by the weight `weight`
+
+    - `GP` is a pair `(D, k)` of a Dynkin type and an index `k` encoding `G/P`
+    - `weight` is a fundamental `L`-dominant weight
+    - `p` is the exponent of the exterior power
     """
-    LG = RootSystem(CartanType(GP[0])).weight_lattice()
+    (D, k) = GP
+    LG = RootSystem(CartanType(D)).weight_lattice()
     LG.print_options(prefix="w")
 
-    if w not in LG:
-        w = sum([a * b for (a, b) in zip(w, LG.fundamental_weights())])
+    # coerce to weight lattice if necessary
+    if weight not in LG:
+        weight = sum([a * b for (a, b) in zip(weight, LG.fundamental_weights())])
 
     # projection on semisimple part: element of weight lattice of Levi factor
-    L = levi_type(CartanType(GP[0]), GP[1])
+    L = levi_type(CartanType(D), k)
     LL = RootSystem(L).weight_lattice()
     wA = sum(
         [
-            LL.fundamental_weight(i) * w.coefficient(relabeling(GP[0], GP[1])[i])
+            LL.fundamental_weight(i) * weight.coefficient(relabeling(D, k)[i])
             for i in L.index_set()
         ]
     )
@@ -201,8 +234,8 @@ def exterior_power(GP, w, p):
     # projection on torus: scalar
     wB = sum(
         [
-            w.coefficient(i) * restriction(GP)[i - 1]
-            for i in CartanType(GP[0]).index_set()
+            weight.coefficient(i) * restriction(GP)[i - 1]
+            for i in CartanType(D).index_set()
         ]
     )
 
@@ -223,60 +256,75 @@ def exterior_power(GP, w, p):
     return combine(GP, summands, line_bundle)
 
 
-def rank(GP, w):
+def rank(GP, weight):
     r"""
-    Compute the rank of the vector bundle described by the weight `w`
+    Compute the rank of the vector bundle described by the weight `weight`
+
+    - `GP` is a pair `(D, k)` of a Dynkin type and an index `k` encoding `G/P`
+    - `weight` is a fundamental `L`-dominant weight
     """
-    LG = RootSystem(CartanType(GP[0])).weight_lattice()
+    (D, k) = GP
+    LG = RootSystem(CartanType(D)).weight_lattice()
     LG.print_options(prefix="w")
 
-    if w not in LG:
-        w = sum([a * b for (a, b) in zip(w, LG.fundamental_weights())])
+    # coerce to weight lattice if necessary
+    if weight not in LG:
+        weight = sum([a * b for (a, b) in zip(weight, LG.fundamental_weights())])
+
     # the Levi type and its weight lattice
-    L = levi_type(GP[0], GP[1])
+    L = levi_type(D, k)
     LL = RootSystem(L).weight_lattice()
 
     # projecting onto the Levi
     vA = sum(
         [
-            LL.fundamental_weight(i) * w.coefficient(relabeling(GP[0], GP[1])[i])
+            LL.fundamental_weight(i) * weight.coefficient(relabeling(D, k)[i])
             for i in L.index_set()
         ]
     )
     return WeylCharacterRing(L)(vA).degree()
 
 
-def is_singular(w):
+def is_singular(weight):
     r"""
-    Determine whether the weight `w` is a singular weight
+    Determine whether the weight `weight` is a singular weight
     """
-    w = w.to_dominant_chamber()
-    return w in w.simple_reflections()
+    weight = weight.to_dominant_chamber()
+    return weight in weight.simple_reflections()
 
 
-def cohomology(GP, w):
+def cohomology(GP, weight):
     r"""
-    Compute the cohomology of the vector bundle described by the weight `w`
+    Compute the cohomology of the vector bundle described by the weight `weight`
+
+    This encodes the Borel-Weil-Bott theorem.
 
     If the weight is singular, return None.
     If the weight is regular, return the degree of non-zero cohomology,
     the weight of the representation, its dimension,
     and the weight of the bundle.
+
+    - `GP` is a pair `(D, k)` of a Dynkin type and an index `k` encoding `G/P`
+    - `weight` is a fundamental `L`-dominant weight
     """
-    LG = RootSystem(CartanType(GP[0])).weight_lattice()
+    (D, _) = GP
+    LG = RootSystem(CartanType(D)).weight_lattice()
     LG.print_options(prefix="w")
 
-    if w not in LG:
-        w = sum([a * b for (a, b) in zip(w, LG.fundamental_weights())])
+    # coerce to weight lattice if necessary
+    if weight not in LG:
+        weight = sum([a * b for (a, b) in zip(weight, LG.fundamental_weights())])
 
-    if is_singular(w + LG.rho()):
+    # the singular case
+    if is_singular(weight + LG.rho()):
         return None
 
-    dominant, word = (w + LG.rho()).to_dominant_chamber(reduced_word=True)
+    # the regular case
+    dominant, word = (weight + LG.rho()).to_dominant_chamber(reduced_word=True)
     dominant = dominant - LG.rho()
     degree = len(word)
     dimension = WeylDim(
-        RootSystem(CartanType(GP[0])), dominant.dense_coefficient_list()
+        RootSystem(CartanType(D)), dominant.dense_coefficient_list()
     )
 
-    return (degree, dominant, dimension, w)
+    return (degree, dominant, dimension, weight)

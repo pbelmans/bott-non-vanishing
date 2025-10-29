@@ -38,7 +38,7 @@ def verify(D, k, A, B):
 
     print("Cohomology in degree 1 is")
     print(f"- vector bundle of weight {H[3]} giving {H[1]}")
-
+    print()
     print()
 
     return True
