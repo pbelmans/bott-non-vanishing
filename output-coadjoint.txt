@@ -9,6 +9,7 @@ using the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
 
+
 Verifying the claim for adjoint of type C4
 using the tangent bundle twisted by -1
 
@@ -19,6 +20,7 @@ using the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
+
 
 Verifying the claim for adjoint of type C5
 using the tangent bundle twisted by -1
@@ -31,6 +33,7 @@ using the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
 
+
 Verifying the claim for adjoint of type C6
 using the tangent bundle twisted by -1
 
@@ -41,6 +44,7 @@ using the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
+
 
 Verifying the claim for adjoint of type C7
 using the tangent bundle twisted by -1
@@ -53,6 +57,7 @@ using the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
 
+
 Verifying the claim for adjoint of type C8
 using the tangent bundle twisted by -1
 
@@ -63,6 +68,7 @@ using the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
+
 
 Verifying the claim for adjoint of type C9
 using the tangent bundle twisted by -1
@@ -75,6 +81,7 @@ using the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] giving 0
 
+
 Verifying the claim for adjoint of type F4
 using the tangent bundle twisted by -1
 
@@ -85,4 +92,5 @@ using the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight w[3] - 2*w[4] giving 0
+
 

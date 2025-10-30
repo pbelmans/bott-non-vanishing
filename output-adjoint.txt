@@ -13,6 +13,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + 4*w[3] giving 2*w[3]
 
+
 Verifying the claim for adjoint of type B4
 using the 3th exterior power of the tangent bundle twisted by -1
 
@@ -27,6 +28,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] + 2*w[4] giving 2*w[4]
+
 
 Verifying the claim for adjoint of type B5
 using the 3th exterior power of the tangent bundle twisted by -1
@@ -43,6 +45,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] + w[4] giving w[4]
 
+
 Verifying the claim for adjoint of type B6
 using the 3th exterior power of the tangent bundle twisted by -1
 
@@ -57,6 +60,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] + w[4] giving w[4]
+
 
 Verifying the claim for adjoint of type B7
 using the 3th exterior power of the tangent bundle twisted by -1
@@ -73,6 +77,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] + w[4] giving w[4]
 
+
 Verifying the claim for adjoint of type B8
 using the 3th exterior power of the tangent bundle twisted by -1
 
@@ -88,6 +93,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] + w[4] giving w[4]
 
+
 Verifying the claim for adjoint of type B9
 using the 3th exterior power of the tangent bundle twisted by -1
 
@@ -102,6 +108,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] + w[4] giving w[4]
+
 
 Verifying the claim for adjoint of type D4
 using the 3th exterior power of the tangent bundle twisted by -1
@@ -138,6 +145,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] + w[4] + w[5] giving w[4] + w[5]
 
+
 Verifying the claim for adjoint of type D6
 using the 3th exterior power of the tangent bundle twisted by -1
 
@@ -152,6 +160,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] + w[4] giving w[4]
+
 
 Verifying the claim for adjoint of type D7
 using the 3th exterior power of the tangent bundle twisted by -1
@@ -168,6 +177,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] + w[4] giving w[4]
 
+
 Verifying the claim for adjoint of type D8
 using the 3th exterior power of the tangent bundle twisted by -1
 
@@ -183,6 +193,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] + w[4] giving w[4]
 
+
 Verifying the claim for adjoint of type D9
 using the 3th exterior power of the tangent bundle twisted by -1
 
@@ -197,6 +208,7 @@ using the 3th exterior power of the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight w[1] - 2*w[2] + w[3] + w[4] giving w[4]
+
 
 Verifying the claim for adjoint of type E6
 using the 5th exterior power of the tangent bundle twisted by -1
@@ -217,6 +229,7 @@ using the 5th exterior power of the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight 2*w[1] - 2*w[2] + w[4] + 2*w[6] giving 2*w[1] + 2*w[6]
+
 
 Verifying the claim for adjoint of type E7
 using the 7th exterior power of the tangent bundle twisted by -1
@@ -240,6 +253,7 @@ using the 7th exterior power of the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight -2*w[1] + w[3] + 3*w[6] giving 3*w[6]
+
 
 Verifying the claim for adjoint of type E8
 using the 11th exterior power of the tangent bundle twisted by -1
@@ -270,6 +284,7 @@ using the 11th exterior power of the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight 5*w[1] + w[7] - 2*w[8] giving 5*w[1]
 
+
 Verifying the claim for adjoint of type F4
 using the 4th exterior power of the tangent bundle twisted by -1
 
@@ -285,6 +300,7 @@ using the 4th exterior power of the tangent bundle twisted by -1
 Cohomology in degree 1 is
 - vector bundle of weight -2*w[1] + w[2] + 3*w[4] giving 3*w[4]
 
+
 Verifying the claim for adjoint of type G2
 using the 2th exterior power of the tangent bundle twisted by -1
 
@@ -296,3 +312,5 @@ using the 2th exterior power of the tangent bundle twisted by -1
 
 Cohomology in degree 1 is
 - vector bundle of weight 4*w[1] - 2*w[2] giving w[1]
+
+
