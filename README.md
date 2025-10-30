@@ -1,3 +1,5 @@
+[![pdf](https://github.com/pbelmans/bott-non-vanishing/actions/workflows/check.yml/badge.svg)](https://github.com/pbelmans/bott-non-vanishing/actions/workflows/check.yml)
+
 # Code accompanying "Failure of Bott vanishing for (co)adjoint partial flag varieties"
 
 This repository contains the code supporting the computations in the paper
@@ -42,7 +44,8 @@ It ran in 5 hours, on a MacBook Pro M4 with 32 GB of memory
 
 The only time-consuming computation is that for E8,
 all other types combined finishes in less than a minute.
-The output can be found in [`output-adjoint.txt`](output-adjoint.txt).
+The output can be found in [`output-adjoint.txt`](output-adjoint.txt),
+which is moreover verified by GitHub Actions (except for E8).
 
 ## `coadjoint.sage`
 
@@ -61,4 +64,5 @@ twisted by `O(-1)`, and verifies that
 
 The code was written and tested using **SageMath 10.5**.
 It runs in less than 3 seconds on a MacBook Pro M4 with 32 GB of memory.
-The output can be found in [`output-coadjoint.txt`](output-coadjoint.txt).
+The output can be found in [`output-coadjoint.txt`](output-coadjoint.txt),
+which is moreover verified by GitHub Actions.
