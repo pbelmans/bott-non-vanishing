@@ -1,0 +1,25 @@
+name: Verifying the output (excluding E8)
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - code.sage
+      - adjoint.sage
+      - coadjoint.sage
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    container:
+      image: sagemath/sagemath:10.5
+      options: --user root
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v4
+      - name: Compare the coadjoint output
+        run: |
+          sage coadjoint.sage | diff - output-coadjoint.txt
+      - name: Compare the adjoint output (excluding E8)
+        run: |
+          sed -i '258,287d' output-adjoint.txt
+          sed -i '/verify("E8", 8, 11)/d' adjoint.sage
+          sage adjoint.sage | diff - output-adjoint.txt
